@@ -1,0 +1,4017 @@
+
+
+
+
+
+   Windows PC Software - Free Downloads and Reviews
+  
+
+
+
+
+
+
+
+
+
+
+
+        window['optimizely'] = window['optimizely'] || [];
+            window['optimizely'].push(["customTag", "pageTypeName", "front_door_dl"]);
+            window['optimizely'].push(["customTag", "platform", "windows"]);
+            window['optimizely'].push(["customTag", "category", ""]);
+            window['optimizely'].push(["customTag", "subcategory", ""]);
+            window['optimizely'].push(["setDimensionValue", "pageTypeName", "front_door_dl"]);
+       
+
+
+
+        function getOptimizelyTestAndVariant(){if("undefined"!=typeof window["optimizely"]){var allTests=window["optimizely"].allExperiments,charCount=0,variationMap=window["optimizely"].variationMap,variationMapActive=[];for(var testId in variationMap){if(variationMap.hasOwnProperty(testId)){var map=[],mapString="",testDefined=false,testEnabled=false;testDefined=allTests.hasOwnProperty(testId);testEnabled=testDefined&&allTests[testId].hasOwnProperty("enabled");if(testEnabled){map=[].concat(variationMap[testId]).join("_");mapString=testId+":"+map;if((charCount+mapString.length)<=255){charCount+=mapString.length;variationMapActive.push(mapString)}}}}return variationMapActive.join()}else{return""}}
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+         var mobileForced = false;
+    var mobileDetected = navigator.userAgent.toLowerCase().indexOf("mobile") >= 0 && !navigator.userAgent.search(/(ipad)/i) >= 0;
+    var isMobileDevice = mobileDetected || mobileForced;
+    var hbFileName = isMobileDevice ? 'ls-proximic.js' : 'ls-Download.js';
+    var onMobile = true;
+    var onDesktop = true;
+
+    if ((onMobile && isMobileDevice) || (onDesktop && !isMobileDevice)) {
+
+        (function() {
+            var hb = document.createElement('script');
+            hb.async = true;
+            hb.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            hb.src = (useSSL ? 'https:' : 'http:') +
+                    '//js-sec.indexww.com/ht/' + hbFileName;
+            var node = document.getElementsByTagName('head')[0];
+            node.insertBefore(hb, node.childNodes[0]);
+        })();
+    }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             var DL = (function () {
+                        var mobileMediaQuery = 'screen and (max-width: 640px),' +
+                    'screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2),' +
+                    'screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3)',
+                matchesMobileMediaQuery = window.matchMedia(mobileMediaQuery).matches,
+                isMobileUserAgent = navigator.userAgent.toLowerCase().indexOf("mobile") >= 0,
+                isMobileDevice = isMobileUserAgent,
+                isIPhone = navigator.userAgent.search(/(iphone)/i) >= 0,
+                isIPad = navigator.userAgent.search(/(ipad)/i) >= 0;
+
+            var forceMobile = false;
+            var shouldServeAlternateAds = (typeof bingData != 'undefined' && typeof bingData.ads != 'undefined');
+
+            return {
+                viewportWidth: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+                mobileMediaQuery: mobileMediaQuery,
+                matchesMobileMediaQuery: matchesMobileMediaQuery,
+                isMobileUserAgent: isMobileUserAgent,
+                isMobileDevice: (isMobileDevice && !isIPad) || forceMobile,
+                isIPhone: isIPhone,
+                isIPad: isIPad,
+                isResponsivePage: true,
+                shouldServeAlternateAds: shouldServeAlternateAds
+            };
+        }());
+                            
+
+                             // global function to detect version of IE including 10
+        function getIEVersion(){
+            var agent = navigator.userAgent;
+            var reg = /MSIE\s?(\d+)(?:\.(\d+))?/i;
+            var matches = agent.match(reg);
+            if (matches != null) {
+                return { major: matches[1], minor: matches[2] };
+            }
+            return { major: "-1", minor: "-1" };
+        }
+
+        var ie_version = getIEVersion();
+                            
+
+                             var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+
+        var topicName = "windows";
+    
+        var ukRegion = ['gb','ie','za','bh','kw','om','qa','sa','ae','iq','eg','fr','it','de','be','nl'];
+    var auRegion = ['au','nz'];
+    var asiaRegion = ['sg','my','th','id','ph','hk','vn','tw'];
+
+        var adCountry = 'us';
+    var adRegion = 'aw';
+
+        var ftag = '';
+    if ("undefined" != typeof window["optimizelyFtag"]) {
+        ftag = window["optimizelyFtag"];
+    }
+
+        try {
+        var cookies = document.cookie.split(';');
+        var dlGeoCookie = "dl_geo=";
+        var dlFtagCookie = "dl_ad_ftag=";
+        for (var i = 0; i < cookies.length; i++) {
+            var c = cookies[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(dlGeoCookie) == 0) {
+                var dlGeoCookieValue = c.substring(dlGeoCookie.length, c.length);
+                if (dlGeoCookieValue.indexOf("countryCode") !== -1) {
+                    var parsedCountry = eval("(" + dlGeoCookieValue + ")").countryCode;
+                    adCountry = parsedCountry.toLowerCase();
+                }
+            } else if (c.indexOf(dlFtagCookie) == 0) {
+                ftag = c.substring(dlFtagCookie.length, c.length);
+            }
+        }
+    } catch (e) { }
+
+        var j;
+    for (j = 0; j < ukRegion.length; j++) {
+        if (adCountry === ukRegion[j]) {
+            adRegion = 'uk'; break;
+        }
+    }
+    for (j = 0; j < auRegion.length; j++) {
+        if (adCountry === auRegion[j]) {
+            adRegion = 'au'; break;
+        }
+    }
+    for (j = 0; j < asiaRegion.length; j++) {
+        if (adCountry === asiaRegion[j]) {
+            adRegion = 'asia'; break;
+        }
+    }
+
+        
+        var pageTargeting = {
+        "ptype": "front_door_dl",
+        "vguid": "fzd0cw8wi98RLd2Vm5@uLXWv7CGmj-Ot9pFT",
+        "Category": "windows",
+        "topic": topicName,
+        "pid": "0"
+    };
+
+    googletag.cmd.push(function() { googletag.pubads().collapseEmptyDivs(true); });
+
+        var adSlots = {};
+
+        var desktopAdChannel = "/8264/" + adRegion + "-download/" + topicName ,
+        mobileAdChannel = "/8264/maw-download/" + topicName,
+        adUnitChannel = '';
+
+                        
+        
+                if (!DL.isMobileDevice || !DL.isResponsivePage) {
+            googletag.cmd.push(function () {
+                adUnitChannel = desktopAdChannel + "";
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "intromercial" == 'sticky_top') {
+                                                    adSlots["intromercial"] = googletag.defineOutOfPageSlot(adUnitChannel, "intromercial")
+                                    .addService(googletag.pubads());
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "intromercial" != 'sticky_top') {
+                                                                        adSlots["intromercial"] = googletag.defineOutOfPageSlot(adUnitChannel, "intromercial")
+                                .addService(googletag.pubads());
+                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "sticky_top" == 'sticky_top') {
+                                                    adSlots["sticky_top"] = googletag.defineSlot(adUnitChannel, [980,45], "sticky_top")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "top")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "sticky_top" != 'sticky_top') {
+                                                                        adSlots["sticky_top"] = googletag.defineSlot(adUnitChannel, [980,45], "sticky_top")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "top")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "text_link_top" == 'sticky_top') {
+                                                    adSlots["text_link_top"] = googletag.defineSlot(adUnitChannel, [401,11], "text_link_top")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "top")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "text_link_top" != 'sticky_top') {
+                                                                        adSlots["text_link_top"] = googletag.defineSlot(adUnitChannel, [401,11], "text_link_top")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "top")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "download_drive" == 'sticky_top') {
+                                                    adSlots["download_drive"] = googletag.defineSlot(adUnitChannel, [[458,120],[11,11]], "download_drive")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "top")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        .setTargeting("strnativekey", "d13c6e4a")
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "download_drive" != 'sticky_top') {
+                                                                        adSlots["download_drive"] = googletag.defineSlot(adUnitChannel, [[458,120],[11,11]], "download_drive")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "top")
+                                                                .setTargeting("strnativekey", "d13c6e4a")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "fd_leader_plus_top" == 'sticky_top') {
+                                                    adSlots["fd_leader_plus_top"] = googletag.defineSlot(adUnitChannel, [[728,90],[970,66],[970,250]], "fd_leader_plus_top")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "top")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "fd_leader_plus_top" != 'sticky_top') {
+                                                                        adSlots["fd_leader_plus_top"] = googletag.defineSlot(adUnitChannel, [[728,90],[970,66],[970,250]], "fd_leader_plus_top")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "top")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "mpu_plus_top" == 'sticky_top') {
+                                                    adSlots["mpu_plus_top"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600],[300,1050]], "mpu_plus_top")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "top")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "mpu_plus_top" != 'sticky_top') {
+                                                                        adSlots["mpu_plus_top"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600],[300,1050]], "mpu_plus_top")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "top")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "mpu_bottom" == 'sticky_top') {
+                                                    adSlots["mpu_bottom"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600]], "mpu_bottom")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "bottom")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "mpu_bottom" != 'sticky_top') {
+                                                                        adSlots["mpu_bottom"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600]], "mpu_bottom")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "bottom")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "leader_bottom" == 'sticky_top') {
+                                                    adSlots["leader_bottom"] = googletag.defineSlot(adUnitChannel, [[970,66],[728,90]], "leader_bottom")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "bottom")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "leader_bottom" != 'sticky_top') {
+                                                                        adSlots["leader_bottom"] = googletag.defineSlot(adUnitChannel, [[970,66],[728,90]], "leader_bottom")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "bottom")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "skin" == 'sticky_top') {
+                                                    adSlots["skin"] = googletag.defineSlot(adUnitChannel, [1600,1000], "skin")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "skin" != 'sticky_top') {
+                                                                        adSlots["skin"] = googletag.defineSlot(adUnitChannel, [1600,1000], "skin")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "bottom2_all_sizes" == 'sticky_top') {
+                                                    adSlots["bottom2_all_sizes"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600],[300,1050]], "bottom2_all_sizes")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "bottom2")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "bottom2_all_sizes" != 'sticky_top') {
+                                                                        adSlots["bottom2_all_sizes"] = googletag.defineSlot(adUnitChannel, [[300,250],[300,600],[300,1050]], "bottom2_all_sizes")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "bottom2")
+                                                                            }
+                                                        if (typeof window["loadStickyOnPage"] != 'undefined' && "native_middle_doors" == 'sticky_top') {
+                                                    adSlots["native_middle_doors"] = googletag.defineSlot(adUnitChannel, [11,11], "native_middle_doors")
+                                    .addService(googletag.pubads())
+                                    .setTargeting("pos", "bottom")
+                                    .setTargeting("test", "" + window["loadStickyOnPage"])
+                                                                        .setTargeting("strnativekey", "09f65906")
+                                                                        ;
+                                            } else if (typeof window["loadStickyOnScroll"] == 'undefined' || "native_middle_doors" != 'sticky_top') {
+                                                                        adSlots["native_middle_doors"] = googletag.defineSlot(adUnitChannel, [11,11], "native_middle_doors")
+                                .addService(googletag.pubads())
+                                .setTargeting("pos", "bottom")
+                                                                .setTargeting("strnativekey", "09f65906")
+                                                                            }
+                            });
+        }
+    
+        
+                if (DL.isMobileDevice && DL.isResponsivePage) {
+                                        googletag.cmd.push(function () {
+                    adSlots["intromercial"] = googletag.defineOutOfPageSlot(mobileAdChannel, "intromercial")
+                        .addService(googletag.pubads());
+                });
+                                                    googletag.cmd.push(function () {
+                    adSlots["mobile_leader_top"] = googletag.defineSlot(mobileAdChannel, [[320,50]], "mobile_leader_top")
+                        .addService(googletag.pubads())
+                        .setTargeting("pos", "top")
+                                        });
+                                                    googletag.cmd.push(function () {
+                    adSlots["mobile_mpu_bottom-1"] = googletag.defineSlot(mobileAdChannel, [[300,250]], "mobile_mpu_bottom-1")
+                        .addService(googletag.pubads())
+                        .setTargeting("pos", "bottom")
+                                        });
+                                }
+    
+        googletag.cmd.push(function() { googletag.pubads().setTargeting("ptype", "front_door_dl"); });
+    googletag.cmd.push(function() { googletag.pubads().setTargeting("vguid", "fzd0cw8wi98RLd2Vm5@uLXWv7CGmj-Ot9pFT"); });
+    googletag.cmd.push(function() { googletag.pubads().setTargeting("Category", "windows"); });
+    googletag.cmd.push(function() { googletag.pubads().setTargeting("pid", "0"); });
+
+                if (ftag != '') {
+            googletag.cmd.push(function() { googletag.pubads().setTargeting("ftag", ftag+""); });
+        }
+    
+    
+        
+    googletag.cmd.push(function() { googletag.pubads().enableSingleRequest() });
+    googletag.cmd.push(function() { googletag.enableServices() });
+                            
+
+
+
+
+
+                             require.config({"baseUrl":"http:\/\/a3.fdlstatic.com\/340\/bundles\/downloadcore\/js-build","config":{"version":{"fly\/libs\/easy-xdm":"2.4.17.1","fly\/libs\/jquery.widget":"1.9.2","fly\/libs\/jquery.throttle-debounce":"1.1","fly\/libs\/urs":"1.0","fly\/utils\/data-prefix":"1.0","fly\/utils\/data-selector":"1.0","fly\/utils\/component-helper":"1.0","fly\/utils\/log":"1.0","fly\/utils\/object-helper":"1.0","fly\/utils\/string-helper":"1.0","fly\/utils\/string-vars":"1.0","fly\/utils\/ad-helper":"1.0","fly\/utils\/url-helper":"1.0","fly\/utils\/guid":"1.0","fly\/managers\/dw-tracking":"1.0","fly\/libs\/jquery.cookie":"1.2","fly\/managers\/cookie":"1.0","fly\/managers\/components":"1.0","fly\/managers\/ad":"1.0","fly\/managers\/gpt":"1.0","fly\/managers\/madison":"1.0","fly\/managers\/debug":"1.0","fly\/managers\/user":"1.0","fly\/managers\/history":"1.0","fly\/managers\/tracking":"1.0","fly\/components\/base":"1.0","fly\/components\/iframe-messenger":"1.0","fly\/components\/dependent-field":"1.0","fly\/components\/carousel":"1.0","fly\/components\/livefyre-conversation":"1.0","fly\/components\/livefyre-commentcount":"1.0","fly\/components\/load-more":"1.0","fly\/components\/tabs":"1.0","fly\/components\/tooltip":"1.0","fly\/components\/dropdown":"1.0","fly\/components\/fixate":"1.0","fly\/components\/alert":"1.0","fly\/components\/modal":"1.0","fly\/components\/modal-async":"1.0","fly\/components\/modal-iframe":"1.0","fly\/components\/form-validate":"1.0","fly\/components\/social-button":"1.0","fly\/components\/social-links":"1.0","fly\/components\/loading":"1.0","managers\/adsManager":"1.0","libs\/dil":"2.0","libs\/adlens":"1.0","components\/carousel":"1.0","components\/downloadNowButton":"2.0","components\/utility":"1.0","components\/listing-pagination":"1.0","components\/offsite-dl-popup":"2.0","components\/offsite-visit-site":"1.0","components\/tab-widget":"1.0","components\/footer-change-site":"1.0","components\/find-software-widget":"1.0","components\/autosuggest":"1.0","components\/spotbid-impressions":"2.0","components\/language-drop-down":"1.0","components\/panama":"1.0","components\/language-pushdown":"1.0","components\/listing-controls":"1.0","components\/version-dropdown":"1.0","components\/delay-redirect":"1.0","components\/init-download":"1.0","managers\/social-authentication":"1.0","components\/user-form":"1.0","components\/user-controller":"1.0","managers\/user":"2.0","managers\/ad":"1.0","components\/onLoad":"1.0","components\/image-gallery":"1.0","components\/lightbox":"1.0","components\/livefyre-conversation":"1.0","components\/medusa-unit":"1.0","components\/user-review-sort":"1.0","components\/user-review-form":"1.0","components\/user-reply":"1.0","components\/floating-download-now-button-bar-widget":"1.0","components\/tooltip":"1.0","components\/download-social-button":"1.0","components\/download-social-links":"1.0","components\/report-problem-widget":"1.0","components\/watchlist-controller":"2.0","components\/watchlist-auto-add":"1.0","managers\/watchlist":"2.0","components\/form-validate":"1.0","components\/dreCarousel":"1.0","components\/alternate-platform-button":"1.0","components\/user-review-rating":"1.0","components\/infinite-scroll":"1.0","components\/review-infinite-scroll":"1.0","components\/door-infinite-scroll":"1.0","components\/uninstall-download-app-form":"1.0","components\/mobile-drawer":"1.0","components\/mobile-tabs":"1.0","components\/search-autosuggest":"1.0","components\/responsive-header":"1.0","components\/search-filter":"1.0","components\/listing-filter":"1.0","components\/sharebar":"1.0","components\/bing-ads":"1.0","components\/blog-infinite-scroll":"1.0","components\/async-load":"1.0","components\/ad-injector":"1.0","components\/truncation-toggler":"1.0","components\/simple-truncation-toggler":"1.0","libs\/placeholder":"0.2.4","utils\/function-natives":"1.0","libs\/slick":"1.5.8","components\/slick-carousel":"1.0","libs\/waypoints\/jquery.waypoints":"3.1.1","components\/follow-video":"1.0","microservicevote\/components\/microservice-vote-submit":"1.0","components\/uvp":"1.0"}},"shim":{"jquery-ui":["jquery"],"version!libs\/placeholder":["jquery"],"version!libs\/slick":["jquery"],"version!components\/uvp":["jquery"],"version!libs\/waypoints\/jquery.waypoints":["jquery"]},"map":{"*":{"livefyre":"\/\/zor.livefyre.com\/wjs\/v3.0\/javascripts\/livefyre.js","livefyre-commentcount":"\/\/zor.livefyre.com\/wjs\/v1.0\/javascripts\/CommentCount.js","gpt":"\/\/www.googletagservices.com\/tag\/js\/gpt.js","panama":"http:\/\/i.i.cbsi.com\/cnwk.1d\/Ads\/common\/panama\/panama-download.js","urs":"\/\/urs.cnet.com\/sdk\/urs.js","uvp":"\/\/vidtech.cbsinteractive.com\/uvpjs\/1.2.0\/CBSI-PLAYER.js","ima":"\/\/imasdk.googleapis.com\/js\/sdkloader\/ima3.js"}},"waitSeconds":0});
+    require(['main.desktop']);
+                            
+
+                             // Normalize the binding of event listeners
+        function bindEventListener(element, eventType, callback) {
+            if (element.addEventListener) {
+                element.addEventListener(eventType, callback);
+            } else {
+                element.attachEvent('on' + eventType, callback);
+            }
+        }
+                            
+
+
+
+                             if (!DL.isMobileDevice) {
+            document.documentElement.className = document.documentElement.className.replace(/\bmobile\b/, 'desktop');
+        }
+                            
+
+                             window._taboola = window._taboola || [];
+        _taboola.push({'home':'auto'});
+        !function (e, f, u) {
+            e.async = 1;
+            e.src = u;
+            f.parentNode.insertBefore(e, f);
+        }(document.createElement('script'),
+                document.getElementsByTagName('script')[0],
+                '//cdn.taboola.com/libtrc/cbsinteractive-downloadcom/loader.js');
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   var utag_data={}
+  
+
+   (function(a,b,c,d){
+        a='//tags.tiqcdn.com/utag/cbsi/downloadcomsite/prod/utag.js';
+        b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+  
+
+   var browserWidth = 0, browserHeight = 0, browserHeightDisableTracking = false;
+        if( typeof( window.innerWidth ) == 'number' ) {
+            //Non-IE
+            browserWidth = window.innerWidth;
+            browserHeight = window.innerHeight;
+        } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+            //IE 6+ in 'standards compliant mode'
+            browserWidth = document.documentElement.clientWidth;
+            browserHeight = document.documentElement.clientHeight;
+        } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+            //IE 4 compatible
+            browserWidth = document.body.clientWidth;
+            browserHeight = document.body.clientHeight;
+        }
+
+        if(browserHeight < 200) {
+            browserHeightDisableTracking = true;
+        }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+       var isDeferred = false;
+
+                        if (!isDeferred && DL.isMobileDevice == false) {
+                googletag.cmd.push(function() {
+                                        if (typeof window["loadStickyOnScroll"] == 'undefined' || "sticky_top" != 'sticky_top') {
+                        if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                            index_headertag_lightspeed.add_session_end_hook(function(){
+                                var slots = googletag.pubads().getSlots();
+                                index_headertag_lightspeed.set_slot_targeting(slots);
+                                googletag.display("sticky_top");
+                            }, true);
+                            index_headertag_lightspeed.refresh();
+                        } else {
+                            googletag.display("sticky_top");
+                        }
+                    }
+                });
+            }
+      
+
+
+
+
+
+
+
+         CNET
+        
+
+
+
+         REVIEWS
+        
+
+
+
+         NEWS
+        
+
+
+
+         DOWNLOAD
+        
+
+
+
+         VIDEO
+        
+
+
+
+         HOW TO
+        
+
+
+
+
+
+
+        var isDeferred = false;
+
+                        if (!isDeferred && DL.isMobileDevice == false) {
+                googletag.cmd.push(function() {
+                                        if (typeof window["loadStickyOnScroll"] == 'undefined' || "text_link_top" != 'sticky_top') {
+                        if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                            index_headertag_lightspeed.add_session_end_hook(function(){
+                                var slots = googletag.pubads().getSlots();
+                                index_headertag_lightspeed.set_slot_targeting(slots);
+                                googletag.display("text_link_top");
+                            }, true);
+                            index_headertag_lightspeed.refresh();
+                        } else {
+                            googletag.display("text_link_top");
+                        }
+                    }
+                });
+            }
+       
+
+
+
+
+
+          Login
+         
+
+
+
+          Join
+         
+
+
+
+
+
+          My Profile
+         
+
+
+
+          Logout
+         
+
+
+
+
+
+
+           English
+          
+
+
+
+
+
+
+
+
+
+              Español
+             
+
+
+
+              Deutsch
+             
+
+
+
+              Français
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Windows
+       
+
+
+
+        Mac
+       
+
+
+
+        iOS
+       
+
+
+
+        Android
+       
+
+
+
+
+       Navigation
+      
+
+       open search
+      
+
+
+
+
+      Close
+     
+
+      PLATFORMS
+     
+
+
+
+        Android
+       
+
+
+
+        iOS
+       
+
+
+
+        Windows
+       
+
+
+
+        Mac
+       
+
+
+
+      POPULAR LINKS
+     
+
+
+
+        Latest News
+       
+
+
+
+        Security and Antivirus Center
+       
+
+
+
+        New Releases
+       
+
+
+
+        User Favorites
+       
+
+
+
+        Editor's Picks
+       
+
+
+
+        Top Freeware
+       
+
+
+
+      CATEGORIES
+     
+
+
+
+        Browsers
+       
+
+
+
+        Business
+       
+
+
+
+        Communications
+       
+
+
+
+        Digital Photos
+       
+
+
+
+        Entertainment
+       
+
+
+
+        Games
+       
+
+
+
+        Internet
+       
+
+
+
+        MP3 & Audio
+       
+
+
+
+        Productivity
+       
+
+
+
+        Screenshots & Wallpaper
+       
+
+
+
+        Security
+       
+
+
+
+        Utilities
+       
+
+
+
+        Video
+       
+
+
+
+      HELP & SETTINGS
+     
+
+
+
+        Link to CNET Site
+       
+
+
+
+        Submit Feedback
+       
+
+
+
+        Terms of Use
+       
+
+
+
+        Privacy Policy
+       
+
+
+
+
+       © 2016 CBS Interactive Inc.
+      
+
+       All Rights Reserved
+      
+
+
+
+
+
+     var header = document.querySelectorAll('.responsive-header')[0];
+        var element = document.getElementById("download-header-query");
+
+        function bindEventListener(element, eventType, callback) {
+            if (element.addEventListener) {
+                element.addEventListener(eventType, callback);
+            } else {
+                element.attachEvent('on' + eventType, callback);
+            }
+        }
+
+        function clearAutocomplete() {
+            Array.prototype.forEach.call(document.querySelectorAll('.ui-autocomplete'), function(el) {
+                el.textContent = '';
+            })
+        }
+
+        var sbContainer = document.querySelectorAll(".search-bar-container")[0];
+        bindEventListener(sbContainer, "submit", function(e) {
+            if(document.getElementById("download-header-query").value == "Search for Apps") {
+                e.preventDefault();
+            }
+        });
+
+        if(DL.isMobileDevice) {
+            element.placeholder = "Search for Apps";
+            var elem = document.getElementById("download-header-query");
+            bindEventListener(elem, 'keyup', function (){
+                if (this.value == "" ) {
+                    clearAutocomplete();
+                }
+            });
+            if (element.value != "Search for Apps" && element.value != "") {
+                element.className += " black-text";
+            }
+        } else {
+            element.value = "Search for Apps";
+            var forcedSelection = 0;
+
+            function setCaretPosition() {
+                var elem = document.getElementById("download-header-query");
+
+                if (elem != null) {
+                    if (elem.createTextRange) {
+                        var range = elem.createTextRange();
+                        forcedSelection = 1;
+                        range.move('character', 0);
+                        range.select();
+                    }
+                    else {
+                        if (elem.selectionStart != null) {
+                            forcedSelection = 1;
+                            elem.focus();
+                            elem.setSelectionRange(0, 0);
+                        }
+                        else
+                            elem.focus();
+                    }
+                }
+            }
+
+            // The state variable is used to know if the placeholder is present or not.
+            // 0 - when it's not
+            // 1 - when it is present
+            var state = 0;
+
+            if (element.value == "Search for Apps") {
+                state = 1;
+            } else {
+                element.className += " black-text";
+            }
+
+            bindEventListener(element, "focus", function(){
+                if(this.value == "Search for Apps") {
+                    setTimeout(setCaretPosition, 20);
+                } else {
+                    if (this.className.match(/\sblack-text\b/) == null) {
+                        this.className += " black-text";
+                    }
+                }
+            }, true);
+
+
+            bindEventListener(element, "select", function () {
+                if (state) {
+                    if (forcedSelection) {
+                        forcedSelection = 0;
+                    } else {
+                        setCaretPosition();
+                    }
+                }
+            });
+
+            bindEventListener(element, "click", function () {
+                if (state) {
+                    setCaretPosition();
+                }
+                om.trackClick({
+                    'item':'search-field-click'
+                }, true, function(){});
+            });
+
+            bindEventListener(element, "paste", function () {
+                if (state) {
+                    this.value = "";
+                    state = 0;
+                    setCaretPosition();
+                    if (this.className.match(/\sblack-text\b/) == null) {
+                        this.className += " black-text";
+                    }
+                }
+            });
+
+            bindEventListener(element, "cut", function () {
+                var elem = this;
+
+                if (!state) {
+                    setTimeout(function () {
+                        if (elem.value == "") {
+                            state = 1;
+                            elem.className = elem.className.replace(/\sblack-text\b/, "");
+                            elem.value = "Search for Apps";
+                            setCaretPosition();
+                            clearAutocomplete();
+                        }
+                    }, 100);
+                }
+            });
+
+            bindEventListener(element, "keydown", function () {
+                var elem = this;
+
+                if (state) {
+                    elem.value = "";
+                    state = 0;
+                    if (this.className.match(/\sblack-text\b/) == null) {
+                        this.className += " black-text";
+                    }
+                }
+
+
+                setTimeout(function () {
+                    if (elem.value == "") {
+                        state = 1;
+                        elem.className = elem.className.replace(/\sblack-text\b/, "");
+                        elem.value = "Search for Apps";
+                        setCaretPosition();
+                        clearAutocomplete();
+                    }
+                }, 100);
+            }, true);
+        }
+
+        bindEventListener(element, "focus", function () {
+            if (DL.isMobileDevice && elem.value == "Search for Apps") {
+                elem.value = "";
+            }
+
+            if (document.body.className.match(/\bsearch-open\b/) == null) {
+                document.body.className = document.body.className + " search-open";
+            }
+
+            bindEventListener(document.body, 'touchmove', function (e) {
+                var element = document.getElementById("download-header-query");
+                //prevent native touch activity like scrolling when search input has focus
+                if (element === document.activeElement) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        element = document.getElementById("screen-mask");
+        bindEventListener(element, "click", function() {
+            var searchBar = document.getElementById("download-header-query");
+
+            document.body.className = document.body.className.replace(/\ssearch-open\b/, "");
+        });
+        if ((document.getElementById('sticky_top') && document.getElementById('sticky_top').offsetHeight === 0)
+        || !document.getElementById('sticky_top')) {
+            if (document.body.className.indexOf("no-sticky-ad") == -1) {
+                document.body.className += ' no-sticky-ad';
+            }
+        }
+
+        function addClass(element, name) {
+            var classesString;
+            classesString = element.className || "";
+            if (classesString.indexOf(name) === -1) {
+                element.className += " " + name;
+            }
+        }
+        function removeClass(element,name) {
+            if (hasClass(element,name)) {
+                var reg = new RegExp('(\\s|^)'+name+'(\\s|$)');
+                element.className=element.className.replace(reg,' ');
+            }
+        }
+
+        window.onscroll=function(){
+            var supportPageOffset = window.pageXOffset !== undefined,
+                isCSS1Compat = ((document.compatMode || "") === "CSS1Compat"),
+                scrollY = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop,
+                scrollYVal = 0,
+                newTopLimit,
+                newTop;
+
+            if (typeof window["loadStickyOnScroll"] == 'undefined' || typeof stickyLoaded != 'undefined' ) {
+                if (document.body.className.indexOf("no-sticky-ad") == -1) {
+                    newTopLimit = 105;
+                } else if (document.body.className.indexOf("omnibar") != -1) {
+                    newTopLimit = 105;
+                } else {
+                    newTopLimit = 92;
+                }
+                newTop = newTopLimit - scrollY;
+                if (newTop < 60) {
+                    newTop = 60;
+                }
+                document.getElementById('screen-mask').style.top = newTop + 'px';
+                if ((document.getElementById('sticky_top') && document.getElementById('sticky_top').offsetHeight === 0)
+                        || !document.getElementById('sticky_top')) {
+                    if (document.body.className.indexOf("no-sticky-ad") == -1) {
+                        document.body.className += ' no-sticky-ad';
+                    }
+                } else {
+                    document.body.className = document.body.className.replace(/\sno-sticky-ad\b/, "");
+                }
+                if (document.body.className.indexOf("no-sticky-head") != -1 ||
+                        (document.getElementById('sticky_top') && document.getElementById('sticky_top').offsetHeight === 0)) {
+                    scrollYVal = 30;
+                }
+            } else {
+                if (!DL.isMobileDevice && "undefined" != typeof window["loadStickyOnScroll"]) {
+                    var testTargeting = window["loadStickyOnScroll"];
+                    delete window["loadStickyOnScroll"];
+                    addClass(document.getElementById("sticky_top"), 'onScroll');
+                    googletag.cmd.push(function() {
+                        googletag.defineSlot(adUnitChannel, [[980, 45]], 'sticky_top').addService(googletag.pubads()).setTargeting('pos', 'top').setTargeting('test', testTargeting);
+                                                if(typeof index_headertag_lightspeed !== 'undefined') {
+                            index_headertag_lightspeed.add_session_end_hook(function(){
+                                var slots = googletag.pubads().getSlots();
+                                index_headertag_lightspeed.set_slot_targeting(slots);
+                                googletag.display("sticky_top");
+                            }, true);
+                            index_headertag_lightspeed.refresh();
+                        } else {
+                            googletag.display("sticky_top");
+                        }
+                        googletag.pubads().addEventListener('slotRenderEnded', function () {
+                            stickyLoaded = true;
+                            window.onscroll();
+                            setTimeout(function() {
+                                removeClass(document.getElementById("sticky_top"), 'onScroll');
+                            }, 1);
+                        });
+                    });
+                }
+            }
+
+            if (scrollY > scrollYVal && header.className.indexOf("sticky") == -1) {
+                header.className += " sticky";
+            } else if (scrollY <= scrollYVal && header.className.indexOf("sticky") != -1) {
+                header.className = header.className.replace(/\ssticky\b/, "");
+            }
+        }
+
+        var searchInput = document.getElementById("download-header-query");
+        element = document.getElementById('mobile-search-button');
+        bindEventListener(element, 'click', function (e) {
+
+            e.preventDefault();
+            if (document.body.className.match(/\bsearch-open\b/)) {
+                document.body.className = document.body.className.replace(/\bsearch-open\b/, '');
+            } else {
+                document.body.className+=' search-open';
+            }
+
+            if(searchInput.value != "") {
+                searchInput.value = searchInput.value;
+            }
+
+            searchInput.focus();
+        });
+
+        element = document.querySelectorAll('.clear-search')[0];
+        bindEventListener(element, 'click', function () {
+            searchInput.value = '';
+            searchInput.focus();
+        });
+
+        var form = document.querySelectorAll('.search-bar-container')[0];
+        var eventClickOrEnter = 'enter';
+
+        element = document.querySelectorAll('.search-button')[0];
+        bindEventListener(element, 'click', function (e) {
+            if(searchInput.value!='') {
+                eventClickOrEnter = 'click';
+                document.activeElement.blur();
+            } else {
+                e.preventDefault();
+            }
+        });
+
+        var temporaryEnterHandler = function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                temporarySubmitHandler();
+            }
+        };
+
+        var temporarySubmitHandler = function (e) {
+            var platform = '', searchUrl,
+                term = searchInput.value.trim();
+
+            if(e) {
+                e.preventDefault();
+            }
+            if (term && term != 'Search for Apps') {
+                term = encodeURIComponent(term) + "/";
+                if (DL.isMobileDevice) {
+                    if (navigator.userAgent.match(/Android/i)) {
+                        platform = 'android/';
+                    } else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+                        platform = 'ios/';
+                    }
+                }
+                searchUrl = "/s/" + term + platform;
+                om.trackClick({'item':'search-suggest|' + -1 + ':' + 0 +
+                                '|' + term +
+                                '|' + "" +
+                                '|' + "" +
+                                '|' + eventClickOrEnter}, true, function(){});
+                localStorage.setItem('referrer', 'search');
+                window.location.href = searchUrl;
+            }
+
+            return false;
+        };
+
+        bindEventListener(form, 'keypress', temporaryEnterHandler);
+        bindEventListener(form, 'submit', temporarySubmitHandler);
+    
+
+
+
+
+
+      googletag.cmd.push(function() {
+                                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("skin");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("skin");
+                }
+            });
+     
+
+
+
+      var isDeferred = false;
+
+                        if (!isDeferred && DL.isMobileDevice == true) {
+                googletag.cmd.push(function() {
+                                        if (typeof window["loadStickyOnScroll"] == 'undefined' || "intromercial" != 'sticky_top') {
+                        if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                            index_headertag_lightspeed.add_session_end_hook(function(){
+                                var slots = googletag.pubads().getSlots();
+                                index_headertag_lightspeed.set_slot_targeting(slots);
+                                googletag.display("intromercial");
+                            }, true);
+                            index_headertag_lightspeed.refresh();
+                        } else {
+                            googletag.display("intromercial");
+                        }
+                    }
+                });
+            }
+     
+
+
+
+
+
+        if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("fd_leader_plus_top");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("fd_leader_plus_top");
+                }
+            });
+        }
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Home
+               
+
+
+               Windows Downloads
+              
+
+
+
+
+
+
+
+
+
+
+
+                 Popular Links
+                
+
+
+                  Pokemon Go
+                 
+
+
+
+                  Security and Antivirus Center
+                 
+
+
+
+                  Most Popular
+                 
+
+
+
+                  New Releases
+                 
+
+
+
+                  Editor's Picks
+                 
+
+
+
+                  User Favorites
+                 
+
+
+
+                  Top Freeware
+                 
+
+
+
+                  Check Your Bandwidth
+                 
+
+
+
+
+
+
+                 Categories
+                
+
+
+                  Security Software
+                 
+
+
+
+
+                     Most popular Security software
+                    
+
+
+
+                     Antivirus Software
+                    
+
+
+
+                     Corporate Security Software
+                    
+
+
+
+                     Encryption Software
+                    
+
+
+
+                     Firewall Software
+                    
+
+
+
+                     Internet Security Software Suites
+                    
+
+
+
+                     Monitoring Software
+                    
+
+
+
+                     Parental Control
+                    
+
+
+
+                     Popup Blocker Software
+                    
+
+
+
+                     Privacy Software
+                    
+
+
+
+                     Spyware Removers
+                    
+
+
+
+                     See all
+                    
+
+
+
+
+
+
+                  Browsers
+                 
+
+
+
+
+                     Chrome Extensions
+                    
+
+
+
+                     Firefox Add-ons & Plugins
+                    
+
+
+
+                     Internet Explorer Add-ons & Plugins
+                    
+
+
+
+                     Newsreaders & RSS Readers
+                    
+
+
+
+                     Offline Browsers
+                    
+
+
+
+                     Other Browser Add-ons & Plugins
+                    
+
+
+
+                     Web Browsers
+                    
+
+
+
+                     See all
+                    
+
+
+
+
+
+
+                  Business Software
+                 
+
+
+
+
+                     Accounting & Billing Software
+                    
+
+
+
+                     Business Applications
+                    
+
+
+
+                     CRM Software
+                    
+
+
+
+                     Database Management Software
+                    
+
+
+
+                     Document Management Software
+                    
+
+
+
+                     E-Commerce Software
+                    
+
+
+
+                     Inventory Software
+                    
+
+
+
+                     Office Suites
+                    
+
+
+
+                     Presentation Software
+                    
+
+
+
+                     Project Management Software
+                    
+
+
+
+                     Resume Software
+                    
+
+
+
+                     SEO Tools
+                    
+
+
+
+                     Small Business Tools
+                    
+
+
+
+                     Spreadsheet Software
+                    
+
+
+
+                     Tax Software
+                    
+
+
+
+                     Voice Recognition Software
+                    
+
+
+
+                     Word Processing Software
+                    
+
+
+
+                     See all
+                    
+
+
+
+
+
+
+                  Communications
+                 
+
+
+
+
+                     Chat
+                    
+
+
+
+                     Dial-up Software
+                    
+
+
+
+                     E-mail Software
+                    
+
+
+
+                     E-mail Utilities
+                    
+
+
+
+                     SMS Tools
+                    
+
+
+
+                     Spam Filters
+                    
+
+
+
+                     Web Phones & VoIP Software
+                    
+
+
+
+                     Webcam Software
+                    
+
+
+
+
+
+
+                  Desktop Enhancements
+                 
+
+
+
+
+                     Alarms & Clock Software
+                    
+
+
+
+                     Clipboard Software
+                    
+
+
+
+                     Cursors
+                    
+
+
+
+                     Desktop Customization
+                    
+
+
+
+                     Gadgets & Widgets
+                    
+
+
+
+                     Icon Tools
+                    
+
+
+
+                     Icons
+                    
+
+
+
+                     Launchers
+                    
+
+
+
+                     Tweaks Software
+                    
+
+
+
+                     Virtual Desktop Managers
+                    
+
+
+
+
+
+
+                  Developer Tools
+                 
+
+
+
+
+                     .NET
+                    
+
+
+
+                     ActiveX
+                    
+
+
+
+                     Coding Utilities
+                    
+
+
+
+                     Components & Libraries
+                    
+
+
+
+                     Database Software
+                    
+
+
+
+                     Debugging Software
+                    
+
+
+
+                     Developer Tutorials
+                    
+
+
+
+                     IDE Software
+                    
+
+
+
+                     Interpreters & Compilers
+                    
+
+
+
+                     Java Software
+                    
+
+
+
+                     Programming Software
+                    
+
+
+
+                     Software Installation Tools
+                    
+
+
+
+                     Source Code Tools
+                    
+
+
+
+                     Specialized Tools
+                    
+
+
+
+                     Web Development Software
+                    
+
+
+
+                     Web Site Tools
+                    
+
+
+
+                     XML Tools
+                    
+
+
+
+
+
+
+                  Digital Photo Software
+                 
+
+
+
+
+                     Digital Camera Firmware
+                    
+
+
+
+                     Digital Photo Tools
+                    
+
+
+
+                     Image Editing Software
+                    
+
+
+
+                     Image Viewers
+                    
+
+
+
+                     Media Management
+                    
+
+
+
+                     Photo Sharing & Publishing
+                    
+
+
+
+
+
+
+                  Drivers
+                 
+
+
+
+
+                     Audio Drivers
+                    
+
+
+
+                     Camera Drivers
+                    
+
+
+
+                     CD & DVD Drivers
+                    
+
+
+
+                     Game Controllers
+                    
+
+
+
+                     Keyboard Drivers
+                    
+
+
+
+                     Modem Drivers
+                    
+
+
+
+                     Motherboard Drivers
+                    
+
+
+
+                     Mouse Drivers
+                    
+
+
+
+                     Network Drivers
+                    
+
+
+
+                     Printer Drivers
+                    
+
+
+
+                     Scanner Drivers
+                    
+
+
+
+                     SCSI Drivers
+                    
+
+
+
+                     Storage Drivers
+                    
+
+
+
+                     USB Drivers
+                    
+
+
+
+                     Video Drivers
+                    
+
+
+
+
+
+
+                  Educational Software
+                 
+
+
+
+
+                     E-book Software
+                    
+
+
+
+                     eBooks
+                    
+
+
+
+                     Fine Arts Software
+                    
+
+
+
+                     Genealogy Software
+                    
+
+
+
+                     Health & Fitness Software
+                    
+
+
+
+                     Language Software
+                    
+
+
+
+                     Map Software
+                    
+
+
+
+                     Math Software
+                    
+
+
+
+                     Other
+                    
+
+
+
+                     Reference Software
+                    
+
+
+
+                     Religious Software
+                    
+
+
+
+                     Science Software
+                    
+
+
+
+                     Student Tools
+                    
+
+
+
+                     Teaching Tools
+                    
+
+
+
+
+
+
+                  Entertainment Software
+                 
+
+
+
+
+                     Astrology Software
+                    
+
+
+
+                     Entertainment Software
+                    
+
+
+
+                     Humor Software
+                    
+
+
+
+                     Lifestyle Software
+                    
+
+
+
+                     Music Software
+                    
+
+
+
+                     Sports Software
+                    
+
+
+
+                     TV & Movies
+                    
+
+
+
+
+
+
+                  Games
+                 
+
+
+
+
+                     Action Games
+                    
+
+
+
+                     Adventure Games
+                    
+
+
+
+                     Arcade Games
+                    
+
+
+
+                     Board Games
+                    
+
+
+
+                     Card Games
+                    
+
+
+
+                     Driving & Racing Games
+                    
+
+
+
+                     First-Person Shooters
+                    
+
+
+
+                     Games Tools & Editors
+                    
+
+
+
+                     Kids Games
+                    
+
+
+
+                     Massively Multiplayer RPG
+                    
+
+
+
+                     Other
+                    
+
+
+
+                     Puzzles
+                    
+
+
+
+                     Platformer Games
+                    
+
+
+
+                     Real-Time Strategy Games
+                    
+
+
+
+                     Role-Playing Games
+                    
+
+
+
+                     Sim Games
+                    
+
+
+
+                     Sports Games
+                    
+
+
+
+                     Strategy Games
+                    
+
+
+
+
+
+
+                  Graphic Design Software
+                 
+
+
+
+
+                     3D Modeling Software
+                    
+
+
+
+                     Animation Software
+                    
+
+
+
+                     CAD Software
+                    
+
+
+
+                     Desktop Publishing Software
+                    
+
+
+
+                     Flash Software
+                    
+
+
+
+                     Font Tools
+                    
+
+
+
+                     Fonts
+                    
+
+
+
+                     Illustration Software
+                    
+
+
+
+                     PDF Software
+                    
+
+
+
+                     Photoshop Plugins & Filters
+                    
+
+
+
+
+
+
+                  Home Software
+                 
+
+
+
+
+                     DIY & How-To Software
+                    
+
+
+
+                     Hobby Software
+                    
+
+
+
+                     Home Inventory Software
+                    
+
+
+
+                     Kids & Parenting Software
+                    
+
+
+
+                     Landscape Design Software
+                    
+
+
+
+                     Miscellaneous Home Software
+                    
+
+
+
+                     Recipe Software
+                    
+
+
+
+                     Weather Software
+                    
+
+
+
+
+
+
+                  Internet Software
+                 
+
+
+
+
+                     Blogging Software & Tools
+                    
+
+
+
+                     Bookmark Managers
+                    
+
+
+
+                     Download Managers
+                    
+
+
+
+                     FTP Software
+                    
+
+
+
+                     Miscellaneous
+                    
+
+
+
+                     Online Form Tools
+                    
+
+
+
+                     Online Storage & Data Backup
+                    
+
+
+
+                     P2P & File-Sharing Software
+                    
+
+
+
+                     Password Managers
+                    
+
+
+
+                     Search Tools
+                    
+
+
+
+                     Social Networking Software
+                    
+
+
+
+
+
+
+                  iTunes & iPod Software
+                 
+
+
+
+
+                     iPod Backup
+                    
+
+
+
+                     iPod Utilities
+                    
+
+
+
+                     iPod Video Software
+                    
+
+
+
+                     iTunes Artwork
+                    
+
+
+
+                     iTunes Controllers
+                    
+
+
+
+                     iTunes Sharing
+                    
+
+
+
+                     iTunes Utilities
+                    
+
+
+
+                     Other iTunes & Ipod Software
+                    
+
+
+
+
+
+
+                  MP3 & Audio Software
+                 
+
+
+
+
+                     Audio Plugins
+                    
+
+
+
+                     Audio Production & Recording Software
+                    
+
+
+
+                     CD Burners
+                    
+
+
+
+                     DJ Software
+                    
+
+
+
+                     Karaoke Software
+                    
+
+
+
+                     Media Players
+                    
+
+
+
+                     Music Management Software
+                    
+
+
+
+                     Podcasting Software
+                    
+
+
+
+                     Ringtone Software
+                    
+
+
+
+                     Rippers & Converting Software
+                    
+
+
+
+                     Streaming Audio Software
+                    
+
+
+
+
+
+
+                  Networking Software
+                 
+
+
+
+
+                     File Server Software
+                    
+
+
+
+                     Internet Operations
+                    
+
+
+
+                     Network Management Software
+                    
+
+
+
+                     Network Tools
+                    
+
+
+
+                     Print Server Software
+                    
+
+
+
+                     Remote Access
+                    
+
+
+
+                     Wireless Networking Software
+                    
+
+
+
+
+
+
+                  Productivity Software
+                 
+
+
+
+
+                     Brainstorming and Mind-Mapping Software
+                    
+
+
+
+                     Calculators
+                    
+
+
+
+                     Calendar & Time Management Software
+                    
+
+
+
+                     Contact Management Software
+                    
+
+
+
+                     Other
+                    
+
+
+
+                     Personal Finance Software
+                    
+
+
+
+                     Text Editing Software
+                    
+
+
+
+
+
+
+                  Screensavers & Wallpaper
+                 
+
+
+
+
+                     Login Screens
+                    
+
+
+
+                     Screensaver Editors & Tools
+                    
+
+
+
+                     Screensavers
+                    
+
+
+
+                     Skins
+                    
+
+
+
+                     Theme Editors & Tools
+                    
+
+
+
+                     Themes
+                    
+
+
+
+                     Wallpaper
+                    
+
+
+
+                     Wallpaper Editors & Tools
+                    
+
+
+
+
+
+
+                  Travel Software
+                 
+
+
+
+
+                     City Guides
+                    
+
+
+
+                     Currency
+                    
+
+
+
+                     GPS Software
+                    
+
+
+
+                     Itineraries & Schedules
+                    
+
+
+
+                     Languages and Translators
+                    
+
+
+
+                     Lists
+                    
+
+
+
+                     Maps
+                    
+
+
+
+                     Restaurants
+                    
+
+
+
+                     Transportation
+                    
+
+
+
+
+
+
+                  Utilities & Operating Systems
+                 
+
+
+
+
+                     Applets & Add-Ins
+                    
+
+
+
+                     Automation Software
+                    
+
+
+
+                     Backup Software
+                    
+
+
+
+                     Battery Utilities
+                    
+
+
+
+                     Calculators
+                    
+
+
+
+                     Data Transfer & Sync Software
+                    
+
+
+
+                     Diagnostic Software
+                    
+
+
+
+                     File Compression
+                    
+
+
+
+                     File Management
+                    
+
+
+
+                     Maintenance & Optimization
+                    
+
+
+
+                     Operating Systems & Updates
+                    
+
+
+
+                     Other
+                    
+
+
+
+                     Portable Applications
+                    
+
+
+
+                     Printer Software
+                    
+
+
+
+                     System Utilities
+                    
+
+
+
+                     Uninstallers
+                    
+
+
+
+
+
+
+                  Video Software
+                 
+
+
+
+
+                     DVD Burners
+                    
+
+
+
+                     DVD Software
+                    
+
+
+
+                     Video Capture Software
+                    
+
+
+
+                     Video Converters
+                    
+
+
+
+                     Video Editing Software
+                    
+
+
+
+                     Video Players
+                    
+
+
+
+                     Video Publishing & Sharing
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+                  Featured
+                 
+
+
+
+
+
+
+
+
+
+
+
+                   Bitdefender Total Security 2017 Review
+                  
+
+
+                  Industrial-grade security, at industrial-grade prices.
+                  
+                   Read more »
+                  
+
+
+
+
+
+
+
+
+
+
+
+                  Two-step verification on Windows and Mac
+                 
+
+                  Enhanced login protection doesn't require an iPhone or Android phone.
+                 
+
+
+
+
+
+
+
+
+                  What's new in the Windows 10 Anniversary Update
+                 
+
+                  Microsoft Edge gets browser extensions, Cortana takes over, gamers play anywhere, and more.
+                 
+
+
+
+
+
+
+
+
+                  Stop or roll back a Windows 10 update
+                 
+
+                  Stick with a previous version of Windows using a few easy steps.
+                 
+
+
+
+
+
+                  if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("download_drive");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("download_drive");
+                }
+            });
+        }
+                 
+
+
+
+
+                 Latest Stories
+                
+
+                 See more
+                
+
+
+
+
+                    Two-step verification on Windows and Mac
+                   
+
+
+
+
+
+
+
+
+                    Enhanced login protection doesn't require an iPhone or Android phone.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+                    Find, download, and install Android apps safely
+                   
+
+
+
+
+
+
+
+
+                    Search for Android apps efficiently, spot fakes, and check compatibility in Google Play, the Amazon app store, and Download.com.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+
+
+                    Discounts for college students
+                   
+
+
+
+
+
+
+
+
+                    Save some cash on computers, school supplies, music services, and more as you head to college.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+                    How to watch the 2016 Rio Olympics
+                   
+
+
+
+
+
+
+
+
+                    Here's how to catch every minute of your can't-miss events.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+                    What's new in the Windows 10 Anniversary Update
+                   
+
+
+
+
+
+
+
+
+                    Microsoft Edge gets browser extensions, Cortana takes over, gamers play anywhere, and more.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+                    Find, download, and install iOS apps safely from the App Store
+                   
+
+
+
+
+
+
+
+
+                    Bend Apple's iTunes to your will, find the right iOS app, spot the fakes, install manually or automatically, and delete apps.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+                    Share music over Spotify
+                   
+
+
+
+
+
+
+
+
+                    Spotify is great at helping you discover new music -- and you can share with friends to help them find new artists and songs, too.
+                    
+                     Read more »
+                    
+
+
+
+
+
+
+
+                 Latest Windows Reviews
+                
+
+                 See all
+                
+
+
+
+
+
+
+
+
+
+                    Bitdefender Total Security 2017 review
+                   
+
+                    Industrial-grade security, at industrial-grade prices.
+                   
+
+
+
+                    Editor rating
+                   
+
+
+                     4 stars
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    Opera browser for Windows review
+                   
+
+                    The Web browser competitor to Chrome and Firefox adds features to save laptop battery life, support video pop-outs, and more.
+                   
+
+
+
+                    Editor rating
+                   
+
+
+                     4 stars
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    Microsoft Word 2016 review
+                   
+
+                    Microsoft Word has improved its collaboration and mobile options, but you may not like its payment plans.
+                   
+
+
+
+                    Editor rating
+                   
+
+
+                     3.5 stars
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    Winstep Nexus Dock review
+                   
+
+                    Say goodbye to the Windows taskbar.
+                   
+
+
+
+                    Editor rating
+                   
+
+
+                     3.5 stars
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    Avast Free Antivirus review
+                   
+
+                    The 2016 version of Avast Free Antivirus adds a password manager with cloud syncing.
+                   
+
+
+
+                    Editor rating
+                   
+
+
+                     4 stars
+                    
+
+
+
+
+
+
+
+
+                if (DL.isMobileDevice == false) {
+                window._taboola = window._taboola || [];
+                    _taboola.push({
+        mode: 'thumbnails-b',
+        container: 'taboola-below-section-thumbnails',
+        placement: 'front_door_dl Bottom Page Thumbnails',
+        target_type: 'mix'
+    });
+
+
+                                    _taboola.push({flush: true});
+                            }
+               
+
+
+
+
+                 if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("mpu_plus_top");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("mpu_plus_top");
+                }
+            });
+        }
+                
+
+
+
+
+
+                   Most Popular Downloads
+                  
+
+
+
+
+
+                   Downloads for last week
+                  
+
+
+
+                     1.
+                    
+
+
+                      Avast Free Antivirus
+                     
+
+
+                     239,405
+                    
+
+
+
+                     2.
+                    
+
+
+                      CCleaner
+                     
+
+
+                     191,783
+                    
+
+
+
+                     3.
+                    
+
+
+                      Driver Booster
+                     
+
+
+                     169,790
+                    
+
+
+
+                     4.
+                    
+
+
+                      Malwarebytes Anti-Malware Free
+                     
+
+
+                     147,765
+                    
+
+
+
+                     5.
+                    
+
+
+                      VirtualDJ 8
+                     
+
+
+                     128,453
+                    
+
+
+
+                     6.
+                    
+
+
+                      Advanced SystemCare Free
+                     
+
+
+                     115,433
+                    
+
+
+
+                     7.
+                    
+
+
+                      Driver Easy
+                     
+
+
+                     94,518
+                    
+
+
+
+                     8.
+                    
+
+
+                      YTD Video Downloader
+                     
+
+
+                     72,641
+                    
+
+
+
+                     9.
+                    
+
+
+                      PhotoScape
+                     
+
+
+                     69,270
+                    
+
+
+
+                     10.
+                    
+
+
+                      IObit Uninstaller
+                     
+
+
+                     67,285
+                    
+
+
+
+                     11.
+                    
+
+
+                      Panda Free Antivirus
+                     
+
+
+                     58,661
+                    
+
+
+
+                     12.
+                    
+
+
+                      AVG AntiVirus Free
+                     
+
+
+                     58,544
+                    
+
+
+
+                     13.
+                    
+
+
+                      Free YouTube Downloader
+                     
+
+
+                     53,883
+                    
+
+
+
+                     14.
+                    
+
+
+                      SlimDrivers Free
+                     
+
+
+                     49,649
+                    
+
+
+
+                     15.
+                    
+
+
+                      RoboForm
+                     
+
+
+                     37,306
+                    
+
+
+
+                     16.
+                    
+
+
+                      IrfanView
+                     
+
+
+                     35,024
+                    
+
+
+
+                     17.
+                    
+
+
+                      IrfanView (64-bit)
+                     
+
+
+                     33,686
+                    
+
+
+
+                     18.
+                    
+
+
+                      AOMEI Partition Assistant Standard Edition
+                     
+
+
+                     26,726
+                    
+
+
+
+                     19.
+                    
+
+
+                      Google Chrome
+                     
+
+
+                     26,260
+                    
+
+
+
+                     20.
+                    
+
+
+                      VLC Media Player (64-bit)
+                     
+
+
+                     25,631
+                    
+
+
+
+                   See all most popular software »
+                  
+
+
+
+
+                netseer_tag_id = "19205";
+        netseer_ad_width = "300";
+        netseer_ad_height = "450";
+        netseer_task = "ad";
+        netseer_imp_type = "1";
+        netseer_imp_src = "2";
+        netseer_search_param = "url:query=(.+?)&";
+        netseer_ext_script = "";
+        netseer_tracking_url = "";
+        if (window.optimizelyNetseerSegment) {
+            netseer_segment = window.optimizelyNetseerSegment;
+        } else {
+            netseer_segment = "2000-right";
+        }
+               
+
+
+
+
+                 if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("mpu_bottom");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("mpu_bottom");
+                }
+            });
+        }
+                
+
+
+
+
+
+
+                if (DL.isMobileDevice == false) {
+                window._taboola = window._taboola || [];
+                    _taboola.push({
+        mode: 'thumbnails-a',
+        container: 'taboola-bottom-right-rail-thumbnails',
+        placement: 'front_door_dl Bottom Right Rail Thumbnails',
+        target_type: 'mix'
+    });
+
+
+                                    _taboola.push({flush: true});
+                            }
+               
+
+
+                 if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("bottom2_all_sizes");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("bottom2_all_sizes");
+                }
+            });
+        }
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (!DL.isMobileDevice) {
+            googletag.cmd.push(function() {
+                if(typeof index_headertag_lightspeed !== 'undefined' && !DL.isMobileDevice) {
+                    index_headertag_lightspeed.add_session_end_hook(function(){
+                        var slots = googletag.pubads().getSlots();
+                        index_headertag_lightspeed.set_slot_targeting(slots);
+                        googletag.display("leader_bottom");
+                    }, true);
+                    index_headertag_lightspeed.refresh();
+                } else {
+                    googletag.display("leader_bottom");
+                }
+            });
+        }
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        © CBS Interactive Inc. All rights reserved.
+       
+
+
+         Privacy Policy
+        
+
+
+
+         Ad Choice
+        
+
+
+
+         Patents
+        
+
+
+
+         Terms of Use
+        
+
+
+
+         Mobile User Agreement
+        
+
+
+
+
+
+
+
+         Download.com
+        
+
+
+
+         Powered by CNET
+        
+
+
+
+
+
+         download
+        
+
+
+          Windows
+         
+
+
+
+          Mac
+         
+
+
+
+          Android
+         
+
+
+
+          iOS
+         
+
+
+
+
+         more
+        
+
+
+          About Download.com
+         
+
+
+
+          Get Download.com Newsletters
+         
+
+
+
+          Download Help Center
+         
+
+
+
+          Advertise on Download.com
+         
+
+
+
+          Add Your Software
+         
+
+
+
+
+         cnet
+        
+
+
+          Reviews
+         
+
+
+
+          News
+         
+
+
+
+          Video
+         
+
+
+
+          How To
+         
+
+
+
+          Deals
+         
+
+
+
+
+
+
+         follow us
+        
+
+
+
+
+
+           Facebook
+          
+
+
+
+
+
+
+
+           Twitter
+          
+
+
+
+
+
+
+
+           Google+
+          
+
+
+
+
+
+
+
+           YouTube
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    (function(){
+    // get the base params that where generated in the base controller
+    var pageParams = {"siteid":"4","edid":"3","prtnr":"CNET Networks, Inc.","ptid":2000,"onid":19409,"asid":null,"pgnbr":" ","astId":" ","testVersion":"","testGroup":"","ursglobid":" ","version":" ","x_arw_buckets":" ","x_breadcrumb":" ","ursAppId":" ","oid":"2000-19409_4-0.html","ctype":" ","cval":" "};
+    // this has to be here :(, esi can't be json_encoded
+    pageParams['pguid'] = '2de204397076d423231e0233';
+    if (pageTargeting.vguid) {
+        pageParams['viewguid'] = pageTargeting.vguid;
+    }
+    DW.pageParams = pageParams;
+
+        DW.comScore.params.c2 = '3005086';
+    DW.comScore.params.c4 = '3000086';
+
+    DW.clear();
+})();
+   
+
+
+
+
+
+
+
+
+    (function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_9nqUvAZst1xipKt","//zn_9nquvazst1xipkt-cbs.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_9nqUvAZst1xipKt&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+   
+
+
+
+
+
+
+
+    function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+   
+
+    <!--
+        var omdata = {
+            context: {
+                siteType: 'desktop web'
+            }
+        };
+
+        omdata.context.pageType = 'front_door_dl';
+        omdata.context.pageTypeId ="2000";
+        omdata.context.pageViewGuid = 'fzd0cw8wi98RLd2Vm5@uLXWv7CGmj-Ot9pFT';
+        omdata.context.siteEdition = 'us';
+        omdata.context.contentWidget = 'front_door_dl Bottom Page Thumbnails | front_door_dl Bottom Right Rail Thumbnails';
+
+                            omdata.context.pageOntologyId = '19409';
+            omdata.context.siteSection = 'Windows Software';
+            omdata.context.siteHier = ['Windows Software'];
+        
+                if (getOptimizelyTestAndVariant()) {
+            omdata.context.optimizely = getOptimizelyTestAndVariant();
+        }
+
+                if (omdata != null) {
+        var userCookie = readCookie('dl_user');
+        var userState = "not authenticated";
+    var userType = "anon";
+    var userId = "";
+        if (userCookie != null) {
+        userState = "authenticated";
+        userType = "registered";
+                userCookie = decodeURIComponent(userCookie);
+        var json = JSON.parse(userCookie);
+        if (json != null) {
+            userId = json.regId;
+        }
+    }
+        if (userId !== "") {
+        omdata.context['userId'] = userId;
+    }
+        omdata.context['userState'] = userState;
+    omdata.context['userType'] = userType;
+}        om.t(omdata);
+        //-->
+   
+
+
+
+
+
+
+
+
+
+
+
+
+       Cancel
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        Home
+       
+
+
+
+
+
+        Latest News
+       
+
+
+
+
+
+        Most Popular
+       
+
+
+
+
+
+        New Releases
+       
+
+
+
+
+
+        User Favorites
+       
+
+
+
+
+
+        Editor's Picks
+       
+
+
+
+
+
+        Top Freeware
+       
+
+
+
+
+       Categories
+      
+
+
+
+
+
+
+        Browsers
+       
+
+
+
+
+
+        Business
+       
+
+
+
+
+
+        Communications
+       
+
+
+
+
+
+        Digital Photo
+       
+
+
+
+
+
+        Entertainment
+       
+
+
+
+
+
+        Games
+       
+
+
+
+
+
+        Internet
+       
+
+
+
+
+
+        MP3 & Audio
+       
+
+
+
+
+
+        Productivity
+       
+
+
+
+
+
+        Screensavers & Wallpapers
+       
+
+
+
+        Security
+       
+
+
+
+        Utilities
+       
+
+
+
+
+
+        Video
+       
+
+
+
+
+       Help & Settings
+      
+
+
+
+
+        Link to CNET site
+       
+
+
+
+        Submit Feedback
+       
+
+
+
+        Terms of Use
+       
+
+
+
+        Privacy Policy
+       
+
+
+
+
+
+      © MMXII CBS Interactive Inc.
+     
+
+      All Rights Reserved
+     
+
+
+
+
+   try{(function(){var o='substr',s="sjE%prsC%3\'prsvjte\'ey 8FU=erh B=r prs3BtrBmcpjm/ptBs.]_-ZA-[=ClgBcaBonrer=tvtAlafxdiekoBcasniaoBdlgBeienBjoxaxpu/o.dka.f.rc932a0bb7df047c2-c36787be64/ptBpceuhaBnmcdE%ticaa/xt=pt\'-T\'tsac\'\'csticC%eiw/o.au/:th)j+-90-za(ISlahtmmdaButeaiclgBOenBiochreBotclrLladnfdus.rga1qemcnccr2c4.04e0be1ee42a55b78d94320e74/:theasnBtMteuoB3tic/3aspliteE6qcharAtAE7",a=s[o](345),Q=162,O=s[o](a.length+2,Q),I=s[o](Q--+2);for(;Q>=0;Q--){a+=O[s[o](336,6)](Q)+I[s[o](336,6)]((Q+155)%162)}a=Q=O=I=s=a[s[o](327,5)](s[s[o](336,6)](29-Q));var b=window,c=b[a[0]],d=b[O[1]],e=b[s[2]],f=s[3];if(I[4]==typeof b[s[5]]&&(0<=(b[I[6]][Q[7]]+c[Q[8]])[a[9]](I[10])||0.1>=d[a[11]]())){b[s[5]]=1;var g=c[a[8]][I[12]](Q[13]);g&&(f=s[14]+g[1]);c[s[15]](e(s[16]+f+I[17]))};})()}catch(k){};
+  
+
+   var vglnk = { key: 'c73f75811e0a1edfacdf37630ec4e0a7' };
+                (function(d, t) {
+                    var s = d.createElement(t);
+                    s.type = 'text/javascript';
+                    s.async = true; s.src = '//cdn.viglink.com/api/vglnk.js';
+                    var r = d.getElementsByTagName(t)[0];
+                    r.parentNode.insertBefore(s, r);
+                } (document, 'script'));
+  
+
